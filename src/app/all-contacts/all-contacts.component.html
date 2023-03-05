@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Online contact application
+
+                <a class="btn btn-success ms-5" routerLink="add-contacts"><i class="fa-solid fa-user-plus me-2"></i>Add
+                    New
+
+                </a>
+
+
+            </h1>
+            <p style="text-align: justify;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit illum natus
+                ut placeat perferendis, inventore ad. Fuga blanditiis cupiditate dolor at distinctio saepe eos obcaecati
+                illo, modi, aspernatur consequuntur tempora.Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Odit illum natus ut placeat perferendis, inventore ad. Fuga blanditiis cupiditate dolor at distinctio
+                saepe eos obcaecati illo, modi, aspernatur consequuntur tempora.Lorem, ipsum dolor sit amet consectetur
+                adipisicing elit. Odit illum natus ut placeat perferendis, inventore ad. Fuga blanditiis cupiditate
+                dolor at distinctio saepe eos obcaecati illo, modi, aspernatur consequuntur tempora.Lorem, ipsum dolor
+                sit amet consectetur adipisicing elit. Odit illum natus ut placeat perferendis, inventore ad. Fuga
+                blanditiis cupiditate dolor at distinctio saepe eos obcaecati illo, modi, aspernatur consequuntur
+                tempora.</p>
+            <div class="row">
+                <div class="col-lg-6">
+                    <input type="text" [(ngModel)]="searchkey" class="form-control" placeholder="Search contacts here">
+                </div>
+                <div class="col-md-6"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- card design -->
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 mb-4" *ngFor="let contact of allcontacts | filter :searchkey:'name'  ">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-4 text-center">
+                            <!-- image -->
+                            <img class=" contact_img" [src]="contact.photo"
+                                alt="Image">
+                        </div>
+                        <div class="col-md-7">
+                            <ul class="list-group">
+                                <li class="list-group-item">Name:<span class="fw-bolder">{{contact.name}}</span></li>
+                                <li class="list-group-item">Ph:<span class="fw-bolder">{{contact.mobile}}</span></li>
+                                <li class="list-group-item">Email:<span class="fw-bolder">{{contact.email}}</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-1 d-flex flex-column justify-content-center align-items-center">
+                            <!-- actions -->
+                            <a routerLink="view-contacts/{{contact.id}}" class="btn btn-warning"><i class="fa-solid fa-eye"></i></a>
+                            <a routerLink="edit-contacts/{{contact.id}}" class="btn btn-success mt-1"><i class="fa-solid fa-pen"></i></a>
+                            <button (click)="deletecontact(contact.id)" class="btn btn-danger mt-1"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div >
+            </div>
+
+
+        </div>
+        <div class="col-md-6"></div>
+    </div>
+</div>

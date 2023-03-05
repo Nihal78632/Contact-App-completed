@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Gloock&family=Labrada:wght@200;300&family=Solway&display=swap');
+ 
+body{
+    font-family: 'Solway',serif;
+}
+.contact_img{
+    width: 100px;
+    height: 120px;
+
+}

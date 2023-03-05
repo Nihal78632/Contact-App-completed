@@ -3,14 +3,32 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AllContactsComponent } from './all-contacts/all-contacts.component';
+import { AddContactsComponent } from './add-contacts/add-contacts.component';
+import { EditContactsComponent } from './edit-contacts/edit-contacts.component';
+import { ViewContactsComponent } from './view-contacts/view-contacts.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { NopagefoundComponent } from './nopagefound/nopagefound.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FilterPipe } from './pipes/filter.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AllContactsComponent,
+    AddContactsComponent,
+    EditContactsComponent,
+    ViewContactsComponent,
+    NavbarComponent,
+    NopagefoundComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
